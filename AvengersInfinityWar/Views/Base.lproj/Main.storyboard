@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EcV-tr-v49">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="vs7-lJ-4d6">
+            <objects>
+                <viewController id="QeP-Vl-OaY" customClass="SplashViewController" customModule="AvengersInfinityWar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fwX-rN-vCR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_bck_launch" translatesAutoresizingMaskIntoConstraints="NO" id="8nX-xJ-ute">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="w7o-du-njV">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hEV-ps-4ga"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8nX-xJ-ute" firstAttribute="top" secondItem="fwX-rN-vCR" secondAttribute="top" id="9O2-Dr-8XB"/>
+                            <constraint firstItem="8nX-xJ-ute" firstAttribute="leading" secondItem="hEV-ps-4ga" secondAttribute="leading" id="VrB-rO-7fX"/>
+                            <constraint firstItem="hEV-ps-4ga" firstAttribute="trailing" secondItem="8nX-xJ-ute" secondAttribute="trailing" id="dXF-vV-3eh"/>
+                            <constraint firstItem="w7o-du-njV" firstAttribute="centerX" secondItem="fwX-rN-vCR" secondAttribute="centerX" id="gjD-uI-Nbl"/>
+                            <constraint firstItem="w7o-du-njV" firstAttribute="centerY" secondItem="fwX-rN-vCR" secondAttribute="centerY" id="oON-cW-hPt"/>
+                            <constraint firstAttribute="bottom" secondItem="8nX-xJ-ute" secondAttribute="bottom" id="zMD-GC-ac8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sgf-Hy-V5B"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="w7o-du-njV" id="4jL-aj-VXK"/>
+                        <segue destination="ysD-Dv-lKu" kind="show" identifier="SEGUE_TO_HOME" id="3e0-X9-gpV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WrH-ci-5FK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1467" y="1442"/>
+        </scene>
+        <!--MarvelHome-->
+        <scene sceneID="iPh-vE-7MB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MarvelHome" id="ysD-Dv-lKu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="lXw-yE-3Ni"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nNy-MQ-oB3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2130" y="1442"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="a36-ph-PP7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EcV-tr-v49" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AZ3-S8-hgY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QeP-Vl-OaY" kind="relationship" relationship="rootViewController" id="GQ4-eN-uQM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5mF-Cp-L6L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="557" y="1442"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="img_bck_launch" width="250" height="541.33331298828125"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
