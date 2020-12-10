@@ -9,15 +9,19 @@ import UIKit
 
 class DetailHeroeViewController: UIViewController {
     
-    var heroes:Heroes?
     
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var heroImage: UIImageView!
-    @IBOutlet weak var heroBio: UITextView!
+    @IBOutlet weak var heroeImage: UIImageView!
+    @IBOutlet weak var heroeBio: UITextView!
+    @IBOutlet weak var heroePower: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = UserDefaults.standard.string(forKey: "heroeName")
+//        self.villanoImage.image = UserDefaults.standard.u
+        self.heroePower.text = UserDefaults.standard.string(forKey: "heroePoder")
+        self.heroeBio.text = UserDefaults.standard.string(forKey: "heroeBio")
       
         
     }

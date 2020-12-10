@@ -9,22 +9,20 @@ import UIKit
 
 class DetailVillanoViewController: UIViewController {
     
-   
+    
+    @IBOutlet weak var villanoImage: UIImageView!
+    @IBOutlet weak var villanoBio: UITextView!
+    @IBOutlet weak var villanoPower: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
-        // Do any additional setup after loading the view.
+        self.title = UserDefaults.standard.string(forKey: "villanoName")
+//        self.villanoImage.image = UserDefaults.standard.u
+        self.villanoPower.text = UserDefaults.standard.string(forKey: "villanoPoder")
+        self.villanoBio.text = UserDefaults.standard.string(forKey: "villanoBio")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

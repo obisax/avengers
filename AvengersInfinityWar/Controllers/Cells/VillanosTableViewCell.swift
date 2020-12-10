@@ -12,18 +12,15 @@ class VillanosTableViewCell: UITableViewCell {
     @IBOutlet weak var villanoCellView: UIView?
     @IBOutlet weak var villanoImage: UIImageView?
     @IBOutlet weak var villanoName: UILabel?
-  
+    @IBOutlet weak var villanoPoder: UILabel?
+    @IBOutlet weak var villanoBio: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         selectionStyle = .none
         
-        villanoCellView?.layer.cornerRadius = 4.0
-        villanoCellView?.layer.shadowColor = UIColor.gray.cgColor
-        villanoCellView?.layer.shadowOffset = CGSize.zero
-        villanoCellView?.layer.shadowOpacity = 0.7
-        villanoCellView?.layer.shadowRadius = 4.0
+
     }
     
     override func prepareForReuse() {
@@ -35,7 +32,8 @@ class VillanosTableViewCell: UITableViewCell {
     func configureViews(villano:Villano){
         villanoImage?.image = UIImage(named: villano.image ?? "")
         villanoName?.text = villano.name
-        
+        villanoPoder?.text = villano.poder
+        villanoBio?.text = villano.descripcion
     }
 
 }

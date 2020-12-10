@@ -21,6 +21,8 @@ class HeroesTableViewController: UIViewController {
         
         
         loadData()
+        self.navigationController?.navigationBar.topItem?.title = "SuperHeroe"
+        
         
         herotableView?.register(UINib(nibName: "HeroeCellView", bundle: nil), forCellReuseIdentifier:"HeroeCellView")
         herotableView?.dataSource = self
@@ -46,7 +48,13 @@ class HeroesTableViewController: UIViewController {
 extension HeroesTableViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         if let heroe = heroe(at: indexPath){
+            UserDefaults.standard.set(heroe.name, forKey: "heroeName")
+            UserDefaults.standard.set(heroe.image, forKey: "heroeImage")
+            UserDefaults.standard.set(heroe.poder, forKey: "heroePoder")
+            UserDefaults.standard.set(heroe.descripcion, forKey: "heroeBio")
+            
             performSegue(withIdentifier: "SEGUE_FROM_DETAIL_HEROE", sender: heroe)
             
         }
@@ -67,9 +75,7 @@ extension HeroesTableViewController: UITableViewDataSource{
         return cell ?? UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150.0
-    }
+
     
     
 

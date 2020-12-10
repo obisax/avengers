@@ -19,9 +19,12 @@ class VillanosTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         loadData()
+        self.navigationItem.title = "Villano"
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "darkblue")
         
+      
+
         viltableView?.register(UINib(nibName: "VillanoCellView", bundle: nil), forCellReuseIdentifier: "VillanoCellView")
         viltableView?.dataSource = self
         viltableView?.delegate = self
@@ -49,6 +52,10 @@ extension VillanosTableViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let villano = villano(at: indexPath){
+            UserDefaults.standard.set(villano.name, forKey: "villanoName")
+            UserDefaults.standard.set(villano.image, forKey: "villanoImage")
+            UserDefaults.standard.set(villano.poder, forKey: "villanoPoder")
+            UserDefaults.standard.set(villano.descripcion, forKey: "villanoBio")
             performSegue(withIdentifier: "SEGUE_FROM_DETAIL_VILLANO", sender: villano)
             
         }
@@ -69,10 +76,7 @@ extension VillanosTableViewController: UITableViewDataSource{
         return cell ?? UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150.0
-    }
-    
+
     
 }
 
