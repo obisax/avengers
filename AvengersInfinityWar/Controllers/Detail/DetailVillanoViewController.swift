@@ -20,7 +20,7 @@ class DetailVillanoViewController: UIViewController {
         
 
         self.title = UserDefaults.standard.string(forKey: "villanoName")
-//        self.villanoImage.image = UserDefaults.standard.u
+        self.villanoImage.image =  UIImage(named: UserDefaults.standard.string(forKey: "villanoImage") ?? "")
         self.villanoPower.text = UserDefaults.standard.string(forKey: "villanoPoder")
         self.villanoBio.text = UserDefaults.standard.string(forKey: "villanoBio")
     }

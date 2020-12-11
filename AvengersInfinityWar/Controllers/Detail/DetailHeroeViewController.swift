@@ -19,7 +19,7 @@ class DetailHeroeViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = UserDefaults.standard.string(forKey: "heroeName")
-//        self.villanoImage.image = UserDefaults.standard.u
+        self.heroeImage.image =  UIImage(named: UserDefaults.standard.string(forKey: "heroeImage") ?? "")
         self.heroePower.text = UserDefaults.standard.string(forKey: "heroePoder")
         self.heroeBio.text = UserDefaults.standard.string(forKey: "heroeBio")
       
