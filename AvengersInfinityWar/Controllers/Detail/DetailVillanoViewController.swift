@@ -2,7 +2,7 @@
 //  DetailVillanoViewController.swift
 //  AvengersInfinityWar
 //
-//  Created by Joan Paredes on 7/12/20.
+//  Created by Humberto Franco Paredes Chaupis on 7/12/20.
 //
 
 import UIKit
